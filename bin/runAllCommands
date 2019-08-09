@@ -1,0 +1,12 @@
+#!/bin/bash
+
+EXE=./NYCTreeInfoExe
+IN_FILE=../Inputfiles/street_trees_full.csv
+
+#loop files in commandfiles
+for file in ../commandfiles/*
+do
+#execute all commands with dataset
+  echo "running $(basename "$file")\n"
+    $EXE $IN_FILE $file
+  done
