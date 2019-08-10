@@ -46,7 +46,9 @@ oaks, sawtooth oaks, scarlet oaks, and white oaks.</p> <br/>
         ├── tree_species.cpp
         ├── __tree_species.h
         └── tree_species.h
-<h2>Commands Description</h2>
+</pre>
+
+<h2>Command Description</h2>
 
 > **tree_info** *tree _to_find* 
 > > where tree_to_find is a string that might contain white space.This
@@ -87,7 +89,7 @@ oaks, sawtooth oaks, scarlet oaks, and white oaks.</p> <br/>
      <*InputFilePath*> <*CommandFilePath*> </pre>
 
 <h2></h2> 
-<p1>Prease
+<p>Prease
      visit <a
      href="http://www.compsci.hunter.cuny.edu/~sweiss/course_materials/csci335/assignments_s19/project1.pdf">
      here</a> for more detailed specification</p>
