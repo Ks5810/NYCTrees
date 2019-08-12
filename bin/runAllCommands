@@ -1,4 +1,7 @@
 #!/bin/bash
+#created by Keisuke Suzuki on Aug 09, 2019
+
+##this file must be excuted in its parent directory
 
 EXE=NYCTreeInfoExe
 IN_FILE=inputfiles/street_trees_full.csv
