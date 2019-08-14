@@ -4,6 +4,7 @@ Author          : Stewart Weiss
 Created on      :
 Description     :
 Modifications   : made by Keisuke Suzuki on Aug 03, 2019
+                  added getSameZip() and getCloseElem()
 *******************************************************************************/
 #include "../Tree/tree.h"
 #include "AvlTree.h"

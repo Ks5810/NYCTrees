@@ -32,7 +32,7 @@ string lower(string str){
     return str;
 }
 
-//for incasesensitivity
+//for case insensitivity
 bool match(const string &lhs, const string &rhs){
     return lower(lhs)==lower(rhs);
 }
@@ -61,7 +61,7 @@ Tree::Tree(const std::string &str){
         }
         else getline(ss, temp, ',');
         
-        switch(i++){
+        switch(i++){            //set corresponding fields
             case 0:
                 if(is_numeric(temp.c_str()))
                     tree_id=stoi(temp);
@@ -89,7 +89,7 @@ Tree::Tree(const std::string &str){
                 break;
             case 25:
                 if(is_numeric(temp.c_str()) && stoi(temp)>=0 &&
-                   stoi(temp)<100000)
+                                                            stoi(temp)<100000)
                     zipcode=stoi(temp);
                 else valid_data=false;
                 break;
@@ -112,6 +112,7 @@ Tree::Tree(const std::string &str){
             default:break;
         }
     }
+    //if data is not valid, set tree_id to 0
     if(!valid_data){
         tree_id=0;
     }

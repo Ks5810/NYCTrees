@@ -65,10 +65,12 @@ int TreeCollection::add_tree(Tree &new_tree){
     string new_name=new_tree.common_name();
     array<int, 5> temp={};
     int new_boro=0;
-    rep(i, 5){
+    rep(i, 5){        //set new_boro to index of boro name stored in new_tree
         if(new_tree.borough_name()==boro_name[i])
             new_boro=i;
     }
+    //if tree is not found in AVLTree, add the tree to it and increment or add
+    // corresponding fields
     if(tree_collection.find(new_tree)==ITEM_NOT_FOUND){
         count_by_boro[new_boro]++;
         tree_collection.insert(new_tree);
