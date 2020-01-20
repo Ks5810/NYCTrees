@@ -1,28 +1,54 @@
 #!/bin/bash
-#created by Keisuke Suzuki on Aug 09, 2019
+##Created by Keisuke Suzuki on Aug 09, 2019
 
-##this file must be excuted in its parent directory
-
-EXE=NYCTreeInfoExe
-IN_FILE=inputfiles/street_trees_full.csv
+# This file must be executed in its parent directory
+EXE=bin/NYCTreeInfoExe
+DATA_URL=https://data.cityofnewyork.us/api/views/uvpi-gqnh/rows.csv
+IN_FILE_NAME=street_trees_full.csv
+IN_FILE_DIR=input-files/
+IN_FILE=${IN_FILE_DIR}${IN_FILE_NAME}
+WGET_OPTIONS="-q --show-progress --output-document=${IN_FILE_NAME}"
 nl='
 '
+
+# Download the data-file from NYC open data if not present
+function download() {
+	if [[ ! -f input-files/street_trees_full.csv ]]; then
+		echo "${IN_FILE_NAME} not found in $PWD/input-files/"
+		read -p "Would you like to download the data set (y/n)? " choice
+		echo
+		case ${choice} in
+			y|Y ) printf "Downloading from ${DATA_URL}\n"
+				if wget ${WGET_OPTIONS} ${DATA_URL}; then
+			       mv ${IN_FILE_NAME} ${IN_FILE_DIR}
+			       printf "Done\n"
+			  	else
+			      	printf 'Wget failed with code "%d" \n' "$?" >&2
+			      	exit 1
+			  	fi ;;
+			n|n ) echo "Exiting ..."
+			  	exit 1;;
+			* ) echo "Invalid" ;;
+		esac
+	fi
+}
+
+# Download
+download
+
+# Trim first line of the data set
+sed -i '1d' ${IN_FILE}
+
+# Create a temp file for storing commands
 touch temp.txt
 
-#create a temp file for storing commands
-
-#loop files in commandfiles
-for file in commandfiles/*; do
-    cat $file >> temp.txt
+# Iterate in command-files
+for file in command-files/*; do
+    cat ${file} >> temp.txt
   done
 
-echo $nl
-echo "running these comands:$nl"
-cat temp.txt
-
 #execute the program
-echo "reading inputfile... $nl"
-$EXE $IN_FILE temp.txt
+echo "${nl}Reading $PWD/${IN_FILE} ${nl}"
+${EXE} ${IN_FILE} temp.txt
 
-rm temp.txt
-
+rm -rf temp.txt

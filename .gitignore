@@ -1,5 +1,8 @@
 .idea
+street_trees_full.csv
 build
 NYCTreeInfoExe
 makeRunAll
 cmake-build-debug
+exe
+.o

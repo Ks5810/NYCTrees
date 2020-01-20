@@ -37,49 +37,43 @@ occurrence of all types of oak trees throughout the city, such as pin oaks, sawt
 
 <h2>Usage</h2>
 
-1. download this project as zip and extract it to preferred location
+1. Download and extract or clone this repository, and cd into the directory.
+2. There are two ways to build the project.
+    - Using cmake:
+        ```shell
+        mkdir build && cd build
+        ```
+        ```shell
+        cmake.. && make
+        ```
+    - Using make:
+        ```shell
+        make
+        ```
+3. Set PATH to bin:
+    ```shell
+         cd .. && export PATH=$PATH:$PWD/bin
+    ```
+4. Execute the program:
+    - If the project is build by cmake:
+        - To run all the commands in command-file by typing:
+            ```shell
+            runAll
+            ```
+        - or run a custom command defined above:
+            ``` shell
+            ./bin/NYCTreeInfoExe [InputFilePath] [CommandFilePath]
+            ```
+    - If the project is build by make:
+        - To run all the commands in command-file by typing:
+            ```shell
+            make run
+            ```
+        - or run a custom command:
+            ```shell
+            ./bin/exe [InputFilePath] [CommandFilePath]
+            ```
 
-2. cd into the location and type: <pre> mkdir  build  &&  cd  build</pre>
-3. compile and link by typing: <pre> cmake ..  &&  make</pre>
-4. set PATH to bin: <pre> cd ..  &&  export  PATH=$PATH:$PWD/bin</pre>
-5. execute the program:
-   *  with all commands in commandfile by typing: <pre> runAllCommands </pre>
-   * or run custom command defined above: <pre> NYCTreeInfoExe  <*InputFilePath*>  <*CommandFilePath*> </pre>
-         
-<h2>Directory Structure</h2>
-<br>
-<pre>
-.
-├── bin
-│   ├── NYCTreeInfoExe                
-│   └── runAllCommands
-├── CMakeLists.txt
-├── commandfiles
-├── inputfiles
-├── README.md
-└── src
-    ├── AVLTree
-    │   ├── AvlTree.cpp
-    │   └── AvlTree.h
-    ├── Command
-    │   ├── command.cpp
-    │   └── command.h
-    ├── GPS
-    │   ├── gps.cpp
-    │   └── gps.h
-    ├── main.cpp
-    ├── Tree
-    │   ├── tree.cpp
-    │   └── tree.h
-    ├── TreeCollection
-    │   ├── tree_collection.cpp
-    │   ├── __tree_collection.h
-    │   └── tree_collection.h
-    └── TreeSpecies
-        ├── tree_species.cpp
-        ├── __tree_species.h
-        └── tree_species.h
-</pre>
 
 <h2></h2> 
 <p>Please
