@@ -11,7 +11,6 @@ Modifications   : made by Keisuke Suzuki on Aug 06, 2019
 #include <iostream>
 #include <cmath>
 #include <cstring>
-#include <proj.h>
 
 struct BadPoint{
     std::string what() const{
