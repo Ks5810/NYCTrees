@@ -2,3 +2,4 @@
 build
 NYCTreeInfoExe
 makeRunAll
+cmake-build-debug

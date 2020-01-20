@@ -1,3 +1,0 @@
-/home/keisuke/projects/nyc-trees/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/keisuke/projects/nyc-trees/cmake-build-debug/CMakeFiles/NYCTreeInfoExe.dir
-/home/keisuke/projects/nyc-trees/cmake-build-debug/CMakeFiles/edit_cache.dir
