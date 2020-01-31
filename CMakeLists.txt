@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.12)
+cmake_minimum_required(VERSION 3.16)
 project(NYCTreeInfo)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++11 -Wall -Wextra")
@@ -17,3 +17,5 @@ endforeach()
 list(REMOVE_DUPLICATES NYCTreeInfo_INCLUDE_DIRS)
 
 add_executable (NYCTreeInfoExe ${NYCTreeInfo_SOURCES})
+
+target_precompile_headers(NTCTreeInfoExe "src/all.h")

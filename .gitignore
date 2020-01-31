@@ -5,4 +5,4 @@ NYCTreeInfoExe
 makeRunAll
 cmake-build-debug
 exe
-.o
+*.o
