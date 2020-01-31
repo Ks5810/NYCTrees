@@ -1,5 +1,5 @@
 #!/bin/bash
-##Created by Keisuke Suzuki on Aug 09, 2019
+## Created by Keisuke Suzuki on Aug 09, 2019
 
 # This file must be executed in its parent directory
 EXE=bin/NYCTreeInfoExe
@@ -18,15 +18,15 @@ function download() {
 		read -p "Would you like to download the data set (y/n)? " choice
 		echo
 		case ${choice} in
-			y|Y ) printf "Downloading from ${DATA_URL}\n"
-				if wget ${WGET_OPTIONS} ${DATA_URL}; then
+			y|Y ) printf "Downloading from %s" "${DATA_URL}\n"
+				if wget "${WGET_OPTIONS}" ${DATA_URL}; then
 			       mv ${IN_FILE_NAME} ${IN_FILE_DIR}
 			       printf "Done\n"
 			  	else
 			      	printf 'Wget failed with code "%d" \n' "$?" >&2
 			      	exit 1
 			  	fi ;;
-			n|n ) echo "Exiting ..."
+			n|N ) echo "Exiting ..."
 			  	exit 1;;
 			* ) echo "Invalid" ;;
 		esac
@@ -44,7 +44,7 @@ touch temp.txt
 
 # Iterate in command-files
 for file in command-files/*; do
-    cat ${file} >> temp.txt
+    cat "$file" >> temp.txt
   done
 
 #execute the program

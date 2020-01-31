@@ -38,9 +38,6 @@
 #ifndef __COMMAND_H__
 #define __COMMAND_H__
 
-#include <iostream>
-#include <sstream>
-
 using namespace std;
 
 /** Command_type: 

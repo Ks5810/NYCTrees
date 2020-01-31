@@ -10,8 +10,6 @@ Modifications   : made by Keisuke Suzuki on Aug 03, 2019
 #ifndef _AVL_TREE_H_
 #define _AVL_TREE_H_
 
-#include <list>
-
 #include "../Tree/tree.h"
 
 // Node and forward declaration because g++ does

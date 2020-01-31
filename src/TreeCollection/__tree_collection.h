@@ -15,9 +15,6 @@
 #ifndef ___Tree_Collection_H__
 #define ___Tree_Collection_H__
 
-#include <string>
-#include <iostream>
-#include <list>
 #include "../Tree/tree.h"
 
 using namespace std;

@@ -9,41 +9,7 @@
 #ifndef __Tree_H__
 #define __Tree_H__
 
-/******************************************************************************
-Data Dictionary for Input File:
- Position   Type   Name        Description
- 1          int    tree_id;    unique id that  identifies the tree
- 4          int    tree_dbh;   specifies tree diameter
- 7          string status;     valid values: ”Alive”, ”Dead”, ”Stump”, or the 
-                               empty string 
- 8          string health;     valid values: ”Good”, ”Fair”, ”Poor”, or the 
-                               empty string
- 10         string spc_common; the common name of the tree, such as “white oak” 
-                               or a possibly empty string
- 25         string  address;   the nearest street address to the tree
- 26         int    zipcode;    positive five digit integer (This means that any 
-                               number from 0 to 99999 is acceptable. The values 
-                               that are shorter are treated as if they had 
-                               leading zeroes
- 30         string boroname;   valid values: ”Manhattan”, ”Bronx”, ”Brooklyn”, 
-                               ”Queens”, ”Staten Island”
- 40         double latitude     spatial coordinate specifying position in 
-                               New York State state plane coordinates
- 41         double longitude     spatial coordinate specifying position in 
-                               New York State state plane coordinates
-
- ******************************************************************************/
-
-#include <iomanip>
-#include <iostream>
-#include <sstream>
-#include <string>
-#include <cstring>
-#include <algorithm>
-
 #include "../GPS/gps.h"
-
-#define DEBUG(x) {std::cout<<x<<endl;}
 
 using namespace std;
 

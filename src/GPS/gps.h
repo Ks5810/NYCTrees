@@ -8,9 +8,7 @@ Modifications   : made by Keisuke Suzuki on Aug 06, 2019
 #ifndef __GPS_H__
 #define __GPS_H__
 
-#include <iostream>
-#include <cmath>
-#include <cstring>
+using namespace std;
 
 struct BadPoint{
     std::string what() const{

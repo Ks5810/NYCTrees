@@ -9,10 +9,6 @@ Modifications   : made by Keisuke Suzuki on Aug 06, 2019
 #ifndef SW2_TREE_COLLECTION_H_
 #define SW2_TREE_COLLECTION_H_
 
-#include <vector>
-#include <array>
-#include <unordered_map>
-
 #include "__tree_collection.h"
 #include"../Tree/tree.h"
 #include "../TreeSpecies/tree_species.h"

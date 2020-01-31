@@ -5,42 +5,11 @@
   Description    : The interface file for the __TreeSpecies abstract class
   Purpose        : Encapsulates a container that represents the set of tree
                    names and the methods that interact with that set
-
-
-  Matching Rules
-  string tree_to_find matches the species common name tree_type if any of the 
-  following conditions are true:
-
-  tree_to_find is exactly the same string as tree_type, ignoring case.
-
-  If tree_to_find has no whitespace or hyphen characters (it is one word) then 
-  if tree_type contains white space characters or hyphens and consists of the
-  words 
-      w_{1}, w_{2}, ..., w_{k}
-  then tree_to_find is exactly one of the words 
-      w_{1}  , w_{2} , ..., w_{k}.
-  For example if tree_to_find is "Japanese", and tree_type is 
-   "Japanese tree lilac", then tree_to_find matches tree_type.
-
-  If tree_to_find has whitespace or hyphen characters, then then if tree_type 
-  contains white space characters or hyphens and consists of the words
-      w_{1}, w_{2}, ..., w_{k}
-  then tree_to_find is some subsequence w_{i}w_{i+1}...w_{j}
-  of the sequence of words
-      w_{1}, w_{2}, ..., w_{k}
-  So "tree lilac" matches "Japanese tree lilac", but "tree lilac" does not 
-  match "lilac".
-
-  Otherwise tree_to_find does not match tree_type. 
 *******************************************************************************/
 
 
 #ifndef ___Tree_Species_H__
 #define ___Tree_Species_H__
-
-#include <string>
-#include <iostream>
-#include <list>
 
 using namespace std;
 

@@ -10,14 +10,6 @@ Modifications   : made by Keisuke Suzuki on Aug 13, 2019
 #ifndef SW2_TREE_SPECIES_H
 #define SW2_TREE_SPECIES_H
 
-#include <iostream>
-#include <algorithm>
-#include <string>
-#include <list>
-#include <map>
-#include <set>
-#include <vector>
-
 #include"__tree_species.h"
 #include "../Tree/tree.h"
 
