@@ -1,0 +1,65 @@
+#!/bin/bash
+## Created by Keisuke Suzuki on Aug 09, 2019
+## This file must be executed in its parent directory
+
+# Copyright 2020 Keisuke Suzuki
+#     This program is free software: you can redistribute it and/or modify
+#     it under the terms of the GNU General Public License as published by
+#     the Free Software Foundation, either version 3 of the License, or
+#     (at your option) any later version.
+#
+#     This program is distributed in the hope that it will be useful,
+#     but WITHOUT ANY WARRANTY; without even the implied warranty of
+#     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#     GNU General Public License for more details.
+
+EXE=bin/exe
+DATA_URL=https://data.cityofnewyork.us/api/views/uvpi-gqnh/rows.csv
+IN_FILE_NAME=street_trees_full.csv
+IN_FILE_DIR=input-files/
+IN_FILE=${IN_FILE_DIR}${IN_FILE_NAME}
+WGET_OPTIONS="-q --show-progress --output-document=${IN_FILE_NAME}"
+nl='
+'
+
+# Download the data-file from NYC open data if not present
+function download() {
+	if [[ ! -f input-files/street_trees_full.csv ]]; then
+		echo "${IN_FILE_NAME} not found in $PWD/input-files/"
+		read -p "Would you like to download the data set (y/n)? " choice
+		echo
+		case ${choice} in
+			y|Y ) printf "Downloading from %s" "${DATA_URL}\n"
+				if wget ${WGET_OPTIONS} ${DATA_URL}; then
+			       mv ${IN_FILE_NAME} ${IN_FILE_DIR}
+			       printf "Done\n"
+			  	else
+			      	printf 'Wget failed with code "%d" \n' "$?" >&2
+			      	exit 1
+			  	fi ;;
+			n|N ) echo "Exiting ..."
+			  	exit 1;;
+			* ) echo "Invalid" ;;
+		esac
+	fi
+}
+
+# Download
+download
+
+# Trim first line of the data set
+sed -i '1d' ${IN_FILE}
+
+# Create a temp file for storing commands
+touch temp.txt
+
+# Iterate in command-files
+for file in command-files/*; do
+    cat "${file}" >> temp.txt
+  done
+
+#execute the program
+echo "${nl}Reading $PWD/${IN_FILE} ${nl}"
+${EXE} ${IN_FILE} temp.txt
+
+rm -rf temp.txt
