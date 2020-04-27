@@ -5,6 +5,19 @@ Created on      :
 Description     :
 Modifications   : made by Keisuke Suzuki on Aug 03, 2019
                   added getSameZip() and getCloseElem()
+                  
+License         : Copyright 2020 Keisuke Suzuki, based on code written by
+    Stewart Weiss, copyrighted under the GPLv3, 2019
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
 *******************************************************************************/
 #include "../Tree/tree.h"
 #include "AvlTree.h"
