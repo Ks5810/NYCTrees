@@ -1,6 +1,6 @@
 /*******************************************************************************
   Title          : main.cpp
-  Author         : Keisuke Suzuki
+  Author         : Stewart Weiss
   Description    : This program reads the tree data file and a command file,
     applying commands to the tree data.
   Usage          : make run

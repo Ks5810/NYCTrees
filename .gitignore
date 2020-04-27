@@ -2,7 +2,8 @@
 street_trees_full.csv
 build
 NYCTreeInfoExe
-makeRunAll
 cmake-build-debug
 exe
 *.o
+all.h.gch
+input-files
