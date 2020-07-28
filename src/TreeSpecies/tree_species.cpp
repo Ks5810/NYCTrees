@@ -1,25 +1,21 @@
-/*******************************************************************************
-Title           : tree_species.cpp
-Author          : Keisuke Suzuki
-Created on      : Apr 06, 2019
-Description     :
-Modifications   : made by Keisuke Suzuki on Aug 06, 2019
-                  added comments, function str_lower() and str_match() for
-                  checking case insensitivity
-
-License        : Copyright 2020 Keisuke Suzuki
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
+/**
+    tree_species.cpp
+    @author Keisuke Suzuki
+    @version 1.0 7/28/20
+    Purpose: To Implement tree_species class
+    Modifications: Made by Keisuke Suzuki on 7/28/20
+    
+    License: Copyright (c) 7/28/20 Keisuke Suzuki
+    	This program is free software: you can redistribute it and/or modify
+    	it under the terms of the GNU General Public License as published by
+    	the Free Software Foundation, either version 3 of the License, or
+    	(at your option) any later version.
   
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-*******************************************************************************/
-
-
+    	This program is distributed in the hope that it will be useful,
+    	but WITHOUT ANY WARRANTY; without even the implied warranty of
+    	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    	GNU General Public License for more details
+*/
 
 #include "tree_species.h"
 
